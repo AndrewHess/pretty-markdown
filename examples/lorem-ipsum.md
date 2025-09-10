@@ -15,10 +15,6 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor i
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sit amet libero sed quam iaculis laoreet at et tellus. Curabitur mattis, diam et varius mollis, nisl mi malesuada nibh, a scelerisque urna orci sit amet arcu. Nullam ultrices nisl nec leo ornare sagittis sit amet ut risus. Mauris tempor, nibh blandit faucibus blandit, libero mi mattis metus, in fermentum tortor odio eu massa. Integer viverra tellus id urna eleifend, ut mattis magna placerat. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nam sed sem quam. Morbi vulputate ante mauris, vel eleifend arcu faucibus eget.
 
-Praesent mauris augue, ultrices vel euismod sit amet, tristique eget nulla. Quisque quis neque eget dolor sodales tempus. Mauris sed tristique enim. Maecenas luctus pulvinar metus non hendrerit. Cras quis velit orci. Ut aliquam et arcu et sagittis. Fusce est urna, aliquet et turpis nec, cursus egestas sapien. Duis laoreet metus justo, quis ultricies metus tincidunt dapibus. Mauris ut rutrum nunc, in congue felis. Sed quis justo sit amet orci pellentesque faucibus.
-
-Quisque convallis, risus sed fringilla maximus, justo urna interdum diam, sit amet luctus ipsum ante vel est. Proin in maximus ante, a dignissim libero. Mauris ullamcorper, urna ut consequat commodo, tellus libero egestas eros, fermentum convallis quam orci nec justo. Aenean iaculis aliquam faucibus. Curabitur maximus, libero quis euismod porttitor, dolor nisi blandit enim, nec laoreet elit velit bibendum felis. Aliquam purus turpis, consequat porttitor est ac, varius malesuada tortor. Suspendisse potenti.
-
 ### Core Design
 
 Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.
@@ -37,11 +33,10 @@ func (rl *RateLimiter) CheckLimit(userID string, tier UserTier) (*RateLimitResul
 
 ### Request Flow
 
-<div style="max-width: 35%; margin: 0 auto;">
+<div style="max-width: 45%; margin: 0 auto;">
 ```mermaid
 graph TD
-    A[Incoming Request] --> B[Extract User Context]
-    B --> C[Load User Tier]
+    C[Load User Tier]
     C --> D{Check Local Cache}
     D -->|Hit| E[Validate Token Bucket]
     D -->|Miss| F[Query Redis]

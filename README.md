@@ -23,3 +23,7 @@ just watch /path/to/your/file.md
 ```
 The output HTML file will be `/path/to/your/file.html`.
 The HTML file will open in your browser and automatically refresh when changes are saved to the Markdown file.
+
+## At a Glance
+See the example below:
+![](./examples/images/lorem-ipsum.png)
